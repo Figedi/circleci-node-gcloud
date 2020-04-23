@@ -11,6 +11,7 @@ jobs:
       - docker/check
       - docker/build:
           image: figedi/circleci-node-gcloud
+          tag: $CIRCLE_SHA1,latest
       - docker/push:
           digest-path: /tmp/digest.txt
           image: figedi/circleci-node-gcloud
