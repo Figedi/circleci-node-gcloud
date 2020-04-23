@@ -13,12 +13,8 @@ jobs:
           image: figedi/circleci-node-gcloud
           tag: $CIRCLE_SHA1,latest
       - docker/push:
-          digest-path: /tmp/digest.txt
           image: figedi/circleci-node-gcloud
           tag: $CIRCLE_SHA1,latest
-      - run:
-          command: |
-            echo "Digest is: $(</tmp/digest.txt)"
 
 workflows:
   commit:
